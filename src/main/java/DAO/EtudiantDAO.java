@@ -65,10 +65,37 @@ public class EtudiantDAO implements EtudiantDAOInterface {
     }
 
     public void Update(Etudiant user){
-
+        if(user != null) {
+            try {
+                PreparedStatement statement = connexion.prepareStatement("UPDATE Etudiants" +
+                "SET id_etudiant = ?, nom_etudiant = ?, prenom_etudiant = ?, age_etudiant = ?" +
+                        "promo_etudiant = ?, id_connexion = ?, id_groupe = ?" +
+                        "WHERE id_etudiant = ?");
+                statement.setInt(1, user.getId());
+                statement.setString(1, user.getLastName());
+                statement.setString(1, user.getFirst_name());
+                statement.setInt(1, user.getAge());
+                statement.setInt(1, user.getPromo());
+                statement.setInt(1, user.getIdConnexion());
+                statement.setInt(1, user.getIdGroupe());
+                statement.setInt(1, user.getId());
+                statement.executeUpdate();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 
     public void Delete(Etudiant user) {
-
+        if(user != null) {
+            try {
+                PreparedStatement statement = connexion.prepareStatement("DELETE FROM Etudiants" +
+                        "WHERE id_etudiant = ?");
+                statement.setInt(1, user.getId());
+                statement.executeUpdate();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
     }
 }
