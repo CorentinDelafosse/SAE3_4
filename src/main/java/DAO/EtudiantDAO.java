@@ -21,7 +21,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
     public Etudiant FindById(int id) {
 
         try {
-            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Etudiants WHERE id = ?");
+            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Etudiants WHERE id_etudiant = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 

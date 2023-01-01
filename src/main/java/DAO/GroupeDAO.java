@@ -21,15 +21,15 @@ public class GroupeDAO implements DAOInterface<Groupe> {
         Groupe group = null;
 
         try {
-            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Groupes WHERE id = ?");
+            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Groupes WHERE id_groupe = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
-                int userId = result.getInt("id_groupe");
+                int ID = result.getInt("id_groupe");
                 String nomGroupe = result.getString("nom_groupe");
 
-                group = new Groupe(userId, nomGroupe);
+                group = new Groupe(ID, nomGroupe);
             }
         } catch (SQLException ex) {
             throw new RuntimeException(ex);

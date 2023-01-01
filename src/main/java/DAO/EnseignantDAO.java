@@ -21,7 +21,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
         Enseignant user = null;
 
         try {
-            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Enseignants WHERE id = ?");
+            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Enseignants WHERE id_enseignant = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 
@@ -64,7 +64,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
         if(user != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("UPDATE Enseignants" +
-                        "SET id_enseignant = ?, nom_çenseignant = ?, prenom_enseignant = ?, couleur_enseignant = ?" +
+                        "SET id_enseignant = ?, nom_enseignant = ?, prenom_enseignant = ?, couleur_enseignant = ?" +
                         ",id_connexion = ?" +
                         "WHERE id_enseignant = ?");
                 statement.setInt(1, user.getId());
