@@ -18,7 +18,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
     }
 
 
-    public Etudiant FindById(int id) {
+    public Etudiant FindById(int id, Date date) {
 
         try {
             PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Etudiants WHERE id_etudiant = ?");
@@ -49,7 +49,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Etudiants" +
                         "(id_etudiant,nom_etudiant,prenom_etudiant,age_etudiant,promo_etudiant,id_connexion,id_groupe" +
-                        "VALUES (?,?,?,?,?,?,?");
+                        "VALUES (?,?,?,?,?,?,?)");
                 statement.setInt(1, user.getId());
                 statement.setString(1, user.getLastName());
                 statement.setString(1, user.getFirst_name());

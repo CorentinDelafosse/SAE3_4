@@ -1,8 +1,10 @@
 package main.java.InterfaceDAO;
 
+import java.sql.Date;
+
 public interface DAOInterface<Donnee>{
 
-    public Donnee FindById(int id);
+    public Donnee FindById(int id, Date date);
 
     public void Insert(Donnee donnee);
 

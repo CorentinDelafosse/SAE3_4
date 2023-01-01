@@ -16,7 +16,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
     }
 
 
-    public Enseignant FindById(int id) {
+    public Enseignant FindById(int id, Date date) {
 
         Enseignant user = null;
 
@@ -47,7 +47,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Enseignants" +
                         "(id_enseignant,nom_enseignant,prenom_etudiant,couleur_enseignant,id_connexion" +
-                        "VALUES (?,?,?,?,?");
+                        "VALUES (?,?,?,?,?)");
                 statement.setInt(1, user.getId());
                 statement.setString(1, user.getLastName());
                 statement.setString(1, user.getFirst_name());

@@ -16,7 +16,7 @@ public class MatiereDAO implements DAOInterface<Matiere> {
     }
 
 
-    public Matiere FindById(int id) {
+    public Matiere FindById(int id, Date date) {
 
         Matiere matiere = null;
 
@@ -44,7 +44,7 @@ public class MatiereDAO implements DAOInterface<Matiere> {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Matieres" +
                         "(id_matiere,nom_matiere" +
-                        "VALUES (?,?");
+                        "VALUES (?,?)");
                 statement.setInt(1, matiere.getId());
                 statement.setString(1, matiere.getNom());
                 statement.executeUpdate();

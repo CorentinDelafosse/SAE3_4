@@ -16,7 +16,7 @@ public class SalleDAO implements DAOInterface<Salle> {
     }
 
 
-    public Salle FindById(int id) {
+    public Salle FindById(int id, Date date) {
 
         Salle salle = null;
 
@@ -46,7 +46,7 @@ public class SalleDAO implements DAOInterface<Salle> {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Salles" +
                         "(id_salle,type_salle,nombre_places, deja_prise" +
-                        "VALUES (?,?,?,?");
+                        "VALUES (?,?,?,?)");
                 statement.setInt(1, salle.getId());
                 statement.setString(1, salle.getType());
                 statement.setInt(1, salle.getNombrePlace());

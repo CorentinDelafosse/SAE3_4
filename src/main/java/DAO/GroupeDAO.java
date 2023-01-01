@@ -16,7 +16,7 @@ public class GroupeDAO implements DAOInterface<Groupe> {
     }
 
 
-    public Groupe FindById(int id) {
+    public Groupe FindById(int id, Date date) {
 
         Groupe group = null;
 
@@ -44,7 +44,7 @@ public class GroupeDAO implements DAOInterface<Groupe> {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Groupes" +
                         "(id_groupe,nom_groupe" +
-                        "VALUES (?,?");
+                        "VALUES (?,?)");
                 statement.setInt(1, group.getId());
                 statement.setString(1, group.getNom());
                 statement.executeUpdate();
