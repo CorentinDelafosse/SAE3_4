@@ -43,7 +43,7 @@ public class MatiereDAO implements DAOInterface<Matiere> {
         if(matiere != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Matieres" +
-                        "(id_matiere,nom_matiere" +
+                        "(id_matiere,nom_matiere)" +
                         "VALUES (?,?)");
                 statement.setInt(1, matiere.getId());
                 statement.setString(1, matiere.getNom());

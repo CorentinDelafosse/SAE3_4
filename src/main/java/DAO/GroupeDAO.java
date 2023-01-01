@@ -43,7 +43,7 @@ public class GroupeDAO implements DAOInterface<Groupe> {
         if(group != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Groupes" +
-                        "(id_groupe,nom_groupe" +
+                        "(id_groupe,nom_groupe)" +
                         "VALUES (?,?)");
                 statement.setInt(1, group.getId());
                 statement.setString(1, group.getNom());

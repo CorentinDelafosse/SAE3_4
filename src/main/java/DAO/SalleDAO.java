@@ -2,7 +2,6 @@ package main.java.DAO;
 
 import main.java.ConnexionJDBC.ConnexionBD;
 import main.java.Donnee.Salle;
-import main.java.Donnee.Salle;
 import main.java.InterfaceDAO.DAOInterface;
 
 import java.sql.*;
@@ -45,7 +44,7 @@ public class SalleDAO implements DAOInterface<Salle> {
         if(salle != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Salles" +
-                        "(id_salle,type_salle,nombre_places, deja_prise" +
+                        "(id_salle,type_salle,nombre_places, deja_prise)" +
                         "VALUES (?,?,?,?)");
                 statement.setInt(1, salle.getId());
                 statement.setString(1, salle.getType());

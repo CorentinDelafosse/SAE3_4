@@ -2,7 +2,6 @@ package main.java.DAO;
 
 import main.java.ConnexionJDBC.ConnexionBD;
 import main.java.Donnee.Jour_non_travaille;
-import main.java.Donnee.Jour_non_travaille;
 import main.java.InterfaceDAO.DAOInterface;
 
 import java.sql.*;
@@ -44,7 +43,7 @@ public class Jour_non_travailleDAO implements DAOInterface<Jour_non_travaille> {
         if(jour != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Jours_non_travailles" +
-                        "(jour_non_travaille, raison" +
+                        "(jour_non_travaille, raison)" +
                         "VALUES (?,?)");
                 statement.setDate(1, jour.getDate());
                 statement.setString(1, jour.getRaison());

@@ -48,7 +48,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
         if(user != null) {
             try {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Etudiants" +
-                        "(id_etudiant,nom_etudiant,prenom_etudiant,age_etudiant,promo_etudiant,id_connexion,id_groupe" +
+                        "(id_etudiant,nom_etudiant,prenom_etudiant,age_etudiant,promo_etudiant,id_connexion,id_groupe)" +
                         "VALUES (?,?,?,?,?,?,?)");
                 statement.setInt(1, user.getId());
                 statement.setString(1, user.getLastName());
