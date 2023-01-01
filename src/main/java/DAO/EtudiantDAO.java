@@ -1,13 +1,13 @@
 package main.java.DAO;
 
 import main.java.ConnexionJDBC.ConnexionBD;
-import main.java.Donnée.Etudiant;
-import main.java.InterfaceDAO.EtudiantDAOInterface;
+import main.java.Donnee.Etudiant;
+import main.java.InterfaceDAO.DAOInterface;
 
 import java.sql.SQLException;
 import java.sql.*;
 
-public class EtudiantDAO implements EtudiantDAOInterface {
+public class EtudiantDAO implements DAOInterface<Etudiant> {
 
     private Etudiant user = null;
     private ConnexionBD connexionBD = new ConnexionBD();

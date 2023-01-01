@@ -1,4 +1,4 @@
-package main.java.Donnée;
+package main.java.Donnee;
 
 public class Etudiant {
 

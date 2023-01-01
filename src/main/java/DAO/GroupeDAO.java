@@ -1,12 +1,12 @@
 package main.java.DAO;
 
 import main.java.ConnexionJDBC.ConnexionBD;
-import main.java.Donnée.Groupe;
-import main.java.InterfaceDAO.GroupeDAOInterface;
+import main.java.Donnee.Groupe;
+import main.java.InterfaceDAO.DAOInterface;
 
 import java.sql.*;
 
-public class GroupeDAO implements GroupeDAOInterface {
+public class GroupeDAO implements DAOInterface<Groupe> {
 
     private ConnexionBD connexionBD = new ConnexionBD();
     private Connection connexion = connexionBD.getConnexion();

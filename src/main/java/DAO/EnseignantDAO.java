@@ -1,12 +1,12 @@
 package main.java.DAO;
 
 import main.java.ConnexionJDBC.ConnexionBD;
-import main.java.Donnée.Enseignant;
-import main.java.InterfaceDAO.EnseignantDAOInterface;
+import main.java.Donnee.Enseignant;
+import main.java.InterfaceDAO.DAOInterface;
 
 import java.sql.*;
 
-public class EnseignantDAO implements EnseignantDAOInterface {
+public class EnseignantDAO implements DAOInterface<Enseignant> {
 
     private ConnexionBD connexionBD = new ConnexionBD();
     private Connection connexion = connexionBD.getConnexion();
