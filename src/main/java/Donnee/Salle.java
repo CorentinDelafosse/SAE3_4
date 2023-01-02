@@ -29,4 +29,14 @@ public class Salle {
     public boolean isDejaPrise() {
         return dejaPrise;
     }
+
+    @Override
+    public String toString() {
+        return "Salle{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", nombrePlace=" + nombrePlace +
+                ", dejaPrise=" + dejaPrise +
+                '}';
+    }
 }

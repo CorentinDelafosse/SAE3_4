@@ -23,4 +23,13 @@ public class Hierarchie {
     public String getNom() {
         return nom;
     }
+
+    @Override
+    public String toString() {
+        return "Hierarchie{" +
+                "idGroupe1=" + idGroupe1 +
+                ", idGroupe2=" + idGroupe2 +
+                ", nom='" + nom + '\'' +
+                '}';
+    }
 }

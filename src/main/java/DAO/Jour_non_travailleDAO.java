@@ -16,13 +16,13 @@ public class Jour_non_travailleDAO implements DAOInterface<Jour_non_travaille> {
     }
 
 
-    public Jour_non_travaille FindById(int id, Date date) {
+    public Jour_non_travaille FindById(int id, String date) {
 
         Jour_non_travaille jour = null;
 
         try {
             PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Jours_non_travailles WHERE jour_non_travaille LIKE ?");
-            statement.setDate(1, date);
+            statement.setString(1, date);
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {

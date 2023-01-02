@@ -18,4 +18,12 @@ public class Jour_non_travaille {
     public String getRaison() {
         return raison;
     }
+
+    @Override
+    public String toString() {
+        return "Jour_non_travaille{" +
+                "date=" + date +
+                ", raison='" + raison + '\'' +
+                '}';
+    }
 }

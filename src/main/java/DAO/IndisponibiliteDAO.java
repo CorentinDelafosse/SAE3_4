@@ -14,17 +14,17 @@ public class IndisponibiliteDAO {
     }
 
 
-    public Indisponibilite FindById(int id, Date date) {
+    public Indisponibilite FindById(int id, String date) {
 
         Indisponibilite indisponible = null;
 
         try {
             PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Indisponibilites WHERE jour_indisponibilite LIKE ?");
-            statement.setDate(1, date);
+            statement.setString(1, date);
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
-                Date jour = result.getDate("jour_indisponibilite");
+                String jour = result.getString("jour_indisponibilite");
                 Time horaire = result.getTime("horaire_indisponibilite");
 
                 indisponible = new Indisponibilite(jour, horaire);
@@ -43,7 +43,7 @@ public class IndisponibiliteDAO {
                 PreparedStatement statement = connexion.prepareStatement("INSERT INTO Indisponibilites" +
                         "(jour_indisponibilite, horaire_indisponibilite)" +
                         "VALUES (?,?");
-                statement.setDate(1, indisponible.getJour());
+                statement.setString(1, indisponible.getJour());
                 statement.setTime(1, indisponible.getHoraire());
                 statement.executeUpdate();
             } catch (SQLException ex) {
@@ -58,9 +58,9 @@ public class IndisponibiliteDAO {
                 PreparedStatement statement = connexion.prepareStatement("UPDATE Indisponibilites" +
                         "SET jour_indisponibilite = ?, horaire_indisponibilite = ?" +
                         "WHERE jour_indisponibilite LIKE ?");
-                statement.setDate(1, indisponible.getJour());
+                statement.setString(1, indisponible.getJour());
                 statement.setTime(1, indisponible.getHoraire());
-                statement.setDate(1, indisponible.getJour());
+                statement.setString(1, indisponible.getJour());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -73,7 +73,7 @@ public class IndisponibiliteDAO {
             try {
                 PreparedStatement statement = connexion.prepareStatement("DELETE FROM Indisponibilites" +
                         "WHERE jour_indisponibilite LIKE ?");
-                statement.setDate(1, indisponible.getJour());
+                statement.setString(1, indisponible.getJour());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);

@@ -29,4 +29,14 @@ public class Connexion {
     public String getStatus() {
         return status;
     }
+
+    @Override
+    public String toString() {
+        return "Connexion{" +
+                "id=" + id +
+                ", id_connexion='" + id_connexion + '\'' +
+                ", mdp='" + mdp + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

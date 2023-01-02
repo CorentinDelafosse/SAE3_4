@@ -16,7 +16,7 @@ public class EtudieDAO implements DAOInterface<Etudie> {
     }
 
 
-    public Etudie FindById(int id, Date date) {
+    public Etudie FindById(int id, String date) {
 
         Etudie cours = null;
 

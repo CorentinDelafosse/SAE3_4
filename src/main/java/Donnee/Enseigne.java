@@ -17,4 +17,12 @@ public class Enseigne {
     public int getMatiere() {
         return matiere;
     }
+
+    @Override
+    public String toString() {
+        return "Enseigne{" +
+                "enseignant=" + enseignant +
+                ", matiere=" + matiere +
+                '}';
+    }
 }

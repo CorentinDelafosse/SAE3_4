@@ -16,7 +16,7 @@ public class MatiereDAO implements DAOInterface<Matiere> {
     }
 
 
-    public Matiere FindById(int id, Date date) {
+    public Matiere FindById(int id, String date) {
 
         Matiere matiere = null;
 

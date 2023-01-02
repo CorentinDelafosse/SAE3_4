@@ -36,4 +36,15 @@ public class Etudie {
     public int getCours() {
         return cours;
     }
+
+    @Override
+    public String toString() {
+        return "Etudie{" +
+                "enseignant=" + enseignant +
+                ", groupe=" + groupe +
+                ", matiere=" + matiere +
+                ", salle=" + salle +
+                ", cours=" + cours +
+                '}';
+    }
 }

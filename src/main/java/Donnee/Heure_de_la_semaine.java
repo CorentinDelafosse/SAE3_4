@@ -41,4 +41,16 @@ public class Heure_de_la_semaine {
     public int getHeureTP() {
         return heureTP;
     }
+
+    @Override
+    public String toString() {
+        return "Heure_de_la_semaine{" +
+                "groupe=" + groupe +
+                ", matiere=" + matiere +
+                ", nbHeure=" + nbHeure +
+                ", heureCM=" + heureCM +
+                ", heureTD=" + heureTD +
+                ", heureTP=" + heureTP +
+                '}';
+    }
 }

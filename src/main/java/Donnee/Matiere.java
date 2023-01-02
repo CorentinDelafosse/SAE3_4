@@ -16,4 +16,12 @@ public class Matiere {
     public String getNom() {
         return nom;
     }
+
+    @Override
+    public String toString() {
+        return "Matiere{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                '}';
+    }
 }

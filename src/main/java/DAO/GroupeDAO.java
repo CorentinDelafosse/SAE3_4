@@ -16,7 +16,7 @@ public class GroupeDAO implements DAOInterface<Groupe> {
     }
 
 
-    public Groupe FindById(int id, Date date) {
+    public Groupe FindById(int id, String date) {
 
         Groupe group = null;
 

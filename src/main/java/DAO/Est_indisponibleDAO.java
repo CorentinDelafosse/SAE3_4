@@ -16,20 +16,20 @@ public class Est_indisponibleDAO implements DAOInterface<Est_indisponible> {
     }
 
 
-    public Est_indisponible FindById(int id, Date date) {
+    public Est_indisponible FindById(int id, String date) {
 
         Est_indisponible indisponible = null;
 
         try {
             PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Est_indisponible WHERE id_enseignant = ? and jour_indisponibilite LIKE ?");
             statement.setInt(1, id);
-            statement.setDate(1, date);
+            statement.setString(2, date);
             ResultSet result = statement.executeQuery();
 
             if (result.next()) {
                 int enseignant = result.getInt("id_enseignant");
-                Date jour = result.getDate("jour_indisponible");
-                Time horaire = result.getTime("horaire_indisponible");
+                String jour = result.getString("jour_indisponibilite");
+                Time horaire = result.getTime("horaire_indisponibilite");
                 String raison = result.getString("raison");
 
                 indisponible = new Est_indisponible(enseignant, jour, horaire, raison);
@@ -49,7 +49,7 @@ public class Est_indisponibleDAO implements DAOInterface<Est_indisponible> {
                         "(id_enseignant, jour_indisponibilite, horaire_indisponibilite, raison)" +
                         "VALUES (?,?,?,?)");
                 statement.setInt(1, indisponible.getEnseignant());
-                statement.setDate(1, indisponible.getDate());
+                statement.setString(1, indisponible.getDate());
                 statement.setTime(1, indisponible.getHoraire());
                 statement.setString(1, indisponible.getRaison());
                 statement.executeUpdate();
@@ -66,11 +66,11 @@ public class Est_indisponibleDAO implements DAOInterface<Est_indisponible> {
                         "SET id_enseignant = ?, jour_indisponibilite = ?, horaire_indisponibilite = ?, raison = ?" +
                         "WHERE id_enseignant = ? and jour_indisponibilite LIKE ?");
                 statement.setInt(1, indisponible.getEnseignant());
-                statement.setDate(1, indisponible.getDate());
+                statement.setString(1, indisponible.getDate());
                 statement.setTime(1, indisponible.getHoraire());
                 statement.setString(1, indisponible.getRaison());
                 statement.setInt(1, indisponible.getEnseignant());
-                statement.setDate(1, indisponible.getDate());
+                statement.setString(1, indisponible.getDate());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -84,7 +84,7 @@ public class Est_indisponibleDAO implements DAOInterface<Est_indisponible> {
                 PreparedStatement statement = connexion.prepareStatement("DELETE FROM Est_indisponible" +
                         "WHERE id_enseignant = ? and jour_indisponibilite = ?");
                 statement.setInt(1, indisponible.getEnseignant());
-                statement.setDate(1, indisponible.getDate());
+                statement.setString(1, indisponible.getDate());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);

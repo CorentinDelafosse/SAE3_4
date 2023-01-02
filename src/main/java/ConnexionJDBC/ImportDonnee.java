@@ -180,7 +180,7 @@ public class ImportDonnee {
             if(!result.next()) {
                 sql = "INSERT INTO Est_indisponible (id_enseignant, Jour_indisponibilite,horaire_indisponibilite,raison)" +
                         " VALUES (0, '2023-01-05', '20:00:00', 'Fermeture IUT')," +
-                        " (0, '2023-01-15', '07:00:00', 'Maladie');";
+                        " (1, '2023-01-15', '07:00:00', 'Maladie');";
 
                 statement.executeUpdate(sql);
             }

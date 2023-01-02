@@ -16,7 +16,7 @@ public class ConnexionDAO implements DAOInterface<Connexion> {
     }
 
 
-    public Connexion FindById(int id, Date date) {
+    public Connexion FindById(int id, String date) {
 
         Connexion compte = null;
 

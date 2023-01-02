@@ -4,11 +4,11 @@ import java.sql.*;
 
 public class Est_indisponible {
     private int enseignant;
-    private Date date;
+    private String date;
     private Time horaire;
     private String raison;
 
-    public Est_indisponible(int enseignant, Date date, Time horaire, String raison) {
+    public Est_indisponible(int enseignant, String date, Time horaire, String raison) {
         this.enseignant = enseignant;
         this.date = date;
         this.horaire = horaire;
@@ -20,7 +20,7 @@ public class Est_indisponible {
         return enseignant;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -30,5 +30,15 @@ public class Est_indisponible {
 
     public String getRaison() {
         return raison;
+    }
+
+    @Override
+    public String toString() {
+        return "Est_indisponible{" +
+                "enseignant=" + enseignant +
+                ", date=" + date +
+                ", horaire=" + horaire +
+                ", raison='" + raison + '\'' +
+                '}';
     }
 }

@@ -16,7 +16,7 @@ public class HierarchieDAO implements DAOInterface<Hierarchie> {
     }
 
 
-    public Hierarchie FindById(int id, Date date) {
+    public Hierarchie FindById(int id, String date) {
 
         Hierarchie hierarchie = null;
 

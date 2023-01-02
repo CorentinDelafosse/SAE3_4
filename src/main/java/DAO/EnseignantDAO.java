@@ -16,7 +16,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
     }
 
 
-    public Enseignant FindById(int id, Date date) {
+    public Enseignant FindById(int id, String date) {
 
         Enseignant user = null;
 
@@ -30,7 +30,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
                 String lastName = result.getString("nom_enseignant");
                 String firstName = result.getString("prenom_enseignant");
                 String couleur = result.getString("couleur_enseignant");
-                int idConnexion = result.getInt("id_connexion");
+                String idConnexion = result.getString("id_connexion");
 
                 user = new Enseignant(userId, lastName, firstName, couleur, idConnexion);
             }
@@ -52,7 +52,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
                 statement.setString(1, user.getLastName());
                 statement.setString(1, user.getFirst_name());
                 statement.setString(1, user.getCouleur());
-                statement.setInt(1, user.getIdConnexion());
+                statement.setString(1, user.getIdConnexion());
                 statement.executeUpdate();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -71,7 +71,7 @@ public class EnseignantDAO implements DAOInterface<Enseignant> {
                 statement.setString(1, user.getLastName());
                 statement.setString(1, user.getFirst_name());
                 statement.setString(1, user.getCouleur());
-                statement.setInt(1, user.getIdConnexion());
+                statement.setString(1, user.getIdConnexion());
                 statement.setInt(1, user.getId());
                 statement.executeUpdate();
             } catch (SQLException ex) {

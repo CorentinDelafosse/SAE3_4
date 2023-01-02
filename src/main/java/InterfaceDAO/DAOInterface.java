@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public interface DAOInterface<Donnee>{
 
-    public Donnee FindById(int id, Date date);
+    public Donnee FindById(int id, String date);
 
     public void Insert(Donnee donnee);
 

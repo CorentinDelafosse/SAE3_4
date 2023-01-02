@@ -16,7 +16,7 @@ public class EnseigneDAO implements DAOInterface<Enseigne> {
     }
 
 
-    public Enseigne FindById(int id, Date date) {
+    public Enseigne FindById(int id, String date) {
 
         Enseigne cours = null;
 

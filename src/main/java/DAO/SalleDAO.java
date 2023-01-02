@@ -15,7 +15,7 @@ public class SalleDAO implements DAOInterface<Salle> {
     }
 
 
-    public Salle FindById(int id, Date date) {
+    public Salle FindById(int id, String date) {
 
         Salle salle = null;
 

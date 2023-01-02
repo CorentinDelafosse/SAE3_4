@@ -18,7 +18,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
     }
 
 
-    public Etudiant FindById(int id, Date date) {
+    public Etudiant FindById(int id, String date) {
 
         try {
             PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Etudiants WHERE id_etudiant = ?");
@@ -31,7 +31,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
                 String firstName = result.getString("prenom_etudiant");
                 int age = result.getInt("age_etudiant");
                 int promo = result.getInt("promo_etudiant");
-                int idConnexion = result.getInt("id_connexion");
+                String idConnexion = result.getString("id_connexion");
                 int idGroupe = result.getInt("id_groupe");
 
                 user = new Etudiant(userId, lastName, firstName, age, promo, idConnexion, idGroupe);
@@ -55,7 +55,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
                 statement.setString(1, user.getFirst_name());
                 statement.setInt(1, user.getAge());
                 statement.setInt(1, user.getPromo());
-                statement.setInt(1, user.getIdConnexion());
+                statement.setString(1, user.getIdConnexion());
                 statement.setInt(1, user.getIdGroupe());
                 statement.executeUpdate();
             } catch (SQLException ex) {
@@ -76,7 +76,7 @@ public class EtudiantDAO implements DAOInterface<Etudiant> {
                 statement.setString(1, user.getFirst_name());
                 statement.setInt(1, user.getAge());
                 statement.setInt(1, user.getPromo());
-                statement.setInt(1, user.getIdConnexion());
+                statement.setString(1, user.getIdConnexion());
                 statement.setInt(1, user.getIdGroupe());
                 statement.setInt(1, user.getId());
                 statement.executeUpdate();

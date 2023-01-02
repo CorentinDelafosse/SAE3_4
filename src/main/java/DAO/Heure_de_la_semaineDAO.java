@@ -16,7 +16,7 @@ public class Heure_de_la_semaineDAO implements DAOInterface<Heure_de_la_semaine>
     }
 
 
-    public Heure_de_la_semaine FindById(int id, Date date) {
+    public Heure_de_la_semaine FindById(int id, String date) {
 
         Heure_de_la_semaine horaire = null;
 

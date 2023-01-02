@@ -7,11 +7,11 @@ public class Etudiant {
     String lastName;
     int age;
     int promo;
-    int idConnexion;
+    String idConnexion;
     int idGroupe;
 
 
-    public Etudiant(int id, String lastName, String firstName, int age, int promo, int idConnexion, int idGroupe) {
+    public Etudiant(int id, String lastName, String firstName, int age, int promo, String idConnexion, int idGroupe) {
         this.id = id;
         this.lastName = lastName;
         this.first_name = firstName;
@@ -42,11 +42,24 @@ public class Etudiant {
         return promo;
     }
 
-    public int getIdConnexion() {
+    public String getIdConnexion() {
         return idConnexion;
     }
 
     public int getIdGroupe() {
         return idGroupe;
+    }
+
+    @Override
+    public String toString() {
+        return "Etudiant{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", promo=" + promo +
+                ", idConnexion=" + idConnexion +
+                ", idGroupe=" + idGroupe +
+                '}';
     }
 }

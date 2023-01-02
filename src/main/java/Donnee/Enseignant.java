@@ -6,11 +6,11 @@ public class Enseignant {
     private String first_name;
     private String lastName;
     private String couleur;
-    private int idConnexion;
+    private String idConnexion;
 
 
 
-    public Enseignant(int id, String lastName, String firstName, String couleur, int idConnexion) {
+    public Enseignant(int id, String lastName, String firstName, String couleur, String idConnexion) {
         this.id = id;
         this.lastName = lastName;
         this.first_name = firstName;
@@ -35,7 +35,18 @@ public class Enseignant {
         return couleur;
     }
 
-    public int getIdConnexion() {
+    public String getIdConnexion() {
         return idConnexion;
+    }
+
+    @Override
+    public String toString() {
+        return "Enseignant{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", couleur='" + couleur + '\'' +
+                ", idConnexion='" + idConnexion + '\'' +
+                '}';
     }
 }
