@@ -21,7 +21,7 @@ public class Heure_de_la_semaineDAO implements DAOInterface<Heure_de_la_semaine>
         Heure_de_la_semaine horaire = null;
 
         try {
-            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Heure_de_la_semaine WHERE id = ?");
+            PreparedStatement statement = connexion.prepareStatement("SELECT * FROM Heure_de_la_semaine WHERE id_matiere = ?");
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
 
