@@ -77,14 +77,14 @@ public class Principal {
                 System.out.println("1. Rechercher une connexion par ID");
                 System.out.println("2. Rechercher un enseignant par ID");
                 System.out.println("3. Rechercher une relation enseignement par ID");
-                System.out.println("4. Rechercher quand un enseigant est indisponible par ID");
+                System.out.println("4. Rechercher quand un enseigant est indisponible par ID et par date");
                 System.out.println("5. Rechercher un etudiant par ID");
                 System.out.println("6. Rechercher quel cours est étudier par ID");
                 System.out.println("7. Rechercher un groupe par ID");
                 System.out.println("8. Rechercher combien d'heure a un groupe une matiere dans une semaine par ID");
                 System.out.println("9. Rechercher une hierarchie par ID");
-                System.out.println("10. Rechercher les indisponibilite par ID");
-                System.out.println("11. Rechercher les jour sans travail par ID");
+                System.out.println("10. Rechercher les indisponibilite par date");
+                System.out.println("11. Rechercher les jour sans travail par date");
                 System.out.println("12. Rechercher une matiere par ID");
                 System.out.println("13. Rechercher une salle par ID");
                 System.out.println("14. Quitter");
