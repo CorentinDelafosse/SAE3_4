@@ -3,6 +3,7 @@ package main.java.Utilisation;
 import main.java.ConnexionJDBC.ConnexionBD;
 import main.java.ConnexionJDBC.CreationDB;
 import main.java.ConnexionJDBC.CreationTable;
+import main.java.ConnexionJDBC.ImportDonnee;
 
 import java.sql.Connection;
 
@@ -29,8 +30,14 @@ public class Principal {
         }
 
 
-
-
+        ImportDonnee insertionDonnee = new ImportDonnee();
+        boolean reussiInsertionDonnee = insertionDonnee.Import();
+        if(reussiInsertionDonnee){
+            System.out.println("Insertion des données reussi");
+        }
+        else{
+            System.out.println("Insertion des données a echoue");
+        }
 
 
         ConnexionBD connexionBD = new ConnexionBD();

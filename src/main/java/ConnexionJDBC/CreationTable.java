@@ -24,7 +24,7 @@ public class CreationTable {
 
             sql = "CREATE TABLE IF NOT EXISTS Matieres(" +
                     "   id_matiere INT," +
-                    "   nom_matiere VARCHAR(20) NOT NULL," +
+                    "   nom_matiere VARCHAR(50) NOT NULL," +
                     "   PRIMARY KEY(id_matiere)" +
                     ");";
 
