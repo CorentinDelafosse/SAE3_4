@@ -101,130 +101,177 @@ public class Principal {
                         break;
                     }
                     if (choice>0 && choice <14) {
-
-
-
-
-
                         if (choice == 1) {
-                            int id = InputInt();
-                            Connexion connexiond = connexionDao.FindById(id, null);
-                            if (connexion != null) {
-                                System.out.println("Connexion trouvée : " + connexiond);
-                            } else {
-                                System.out.println("Aucune connexion trouvée avec l'ID " + id);
+                            try {
+                                int id = InputInt();
+                                Connexion connexiond = connexionDao.FindById(id, null);
+                                if (connexion != null) {
+                                    System.out.println("Connexion trouvée : " + connexiond);
+                                } else {
+                                    System.out.println("Aucune connexion trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 2) {
-                            int id = InputInt();
-                            Enseignant enseignant = enseignantDao.FindById(id, null);
-                            if (enseignant != null) {
-                                System.out.println("Enseignant trouvé : " + enseignant);
-                            } else {
-                                System.out.println("Aucun enseignant trouvé avec l'ID " + id);
+                            try {
+                                int id = InputInt();
+                                Enseignant enseignant = enseignantDao.FindById(id, null);
+                                if (enseignant != null) {
+                                    System.out.println("Enseignant trouvé : " + enseignant);
+                                } else {
+                                    System.out.println("Aucun enseignant trouvé avec l'ID " + id);
+                                }
+                            } catch (Exception E){
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 3) {
-                            int id = InputInt();
-                            Enseigne enseigne = enseigneDao.FindById(id, null);
-                            if (enseigne != null) {
-                                System.out.println("Relation enseignement trouvée : " + enseigne);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Enseigne enseigne = enseigneDao.FindById(id, null);
+                                if (enseigne != null) {
+                                    System.out.println("Relation enseignement trouvée : " + enseigne);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 4) {
-                            int id = InputInt();
-                            String date = InputString();
-                            Est_indisponible est_indisponible = est_indisponibleDao.FindById(id, date);
-                            if (est_indisponible != null) {
-                                System.out.println("Relation enseignement trouvée : " + est_indisponible);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                String date = InputString();
+                                Est_indisponible est_indisponible = est_indisponibleDao.FindById(id, date);
+                                if (est_indisponible != null) {
+                                    System.out.println("Relation enseignement trouvée : " + est_indisponible);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID "+ id +" et la date " + date);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID "+ id +" et la date " + date);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 5) {
-                            int id = InputInt();
-                            Etudiant etudiant = etudiantDAO.FindById(id, null);
-                            if (etudiant != null) {
-                                System.out.println("Relation enseignement trouvée : " + etudiant);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Etudiant etudiant = etudiantDAO.FindById(id, null);
+                                if (etudiant != null) {
+                                    System.out.println("Relation enseignement trouvée : " + etudiant);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 6) {
-                            int id = InputInt();
-                            Etudie etudie = etudieDAO.FindById(id, null);
-                            if (etudie != null) {
-                                System.out.println("Relation enseignement trouvée : " + etudie);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Etudie etudie = etudieDAO.FindById(id, null);
+                                if (etudie != null) {
+                                    System.out.println("Relation enseignement trouvée : " + etudie);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 7) {
-                            int id = InputInt();
-                            Groupe groupe = groupeDAO.FindById(id, null);
-                            if (groupe != null) {
-                                System.out.println("Relation enseignement trouvée : " + groupe);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Groupe groupe = groupeDAO.FindById(id, null);
+                                if (groupe != null) {
+                                    System.out.println("Relation enseignement trouvée : " + groupe);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 8) {
-                            int id = InputInt();
-                            Heure_de_la_semaine heure_de_la_semaine = heure_de_la_semaineDAO.FindById(id, null);
-                            if (heure_de_la_semaine != null) {
-                                System.out.println("Relation enseignement trouvée : " + heure_de_la_semaine);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Heure_de_la_semaine heure_de_la_semaine = heure_de_la_semaineDAO.FindById(id, null);
+                                if (heure_de_la_semaine != null) {
+                                    System.out.println("Relation enseignement trouvée : " + heure_de_la_semaine);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 9) {
-                            int id = InputInt();
-                            Hierarchie hierarchie = hierarchieDAO.FindById(id, null);
-                            if (hierarchie != null) {
-                                System.out.println("Relation enseignement trouvée : " + hierarchie);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Hierarchie hierarchie = hierarchieDAO.FindById(id, null);
+                                if (hierarchie != null) {
+                                    System.out.println("Relation enseignement trouvée : " + hierarchie);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 10) {
+                            try {
+                                System.out.print("Entrez une date au format yyyy-mm-dd :");
+                                String date  = sc.next();
 
-                            System.out.print("Entrez une date au format yyyy-mm-dd :");
-                            String date  = sc.next();
+                                Indisponibilite indisponibilite = indisponibiliteDAO.FindById(0, date);
+                                if (indisponibilite != null) {
+                                    System.out.println("Relation enseignement trouvée : " + indisponibilite);
+                                } else {
 
-                            Indisponibilite indisponibilite = indisponibiliteDAO.FindById(0, date);
-                            if (indisponibilite != null) {
-                                System.out.println("Relation enseignement trouvée : " + indisponibilite);
-                            } else {
-
-                                System.out.println("Aucune relation enseignement trouvée avec la date " + date);
+                                    System.out.println("Aucune relation enseignement trouvée avec la date " + date);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer une date valide");
                             }
                         } else if (choice == 11) {
-                            String date = InputString();
-                            Jour_non_travaille jour_non_travaille = jour_non_travailleDAO.FindById(0, date);
-                            if (jour_non_travaille != null) {
-                                System.out.println("Relation enseignement trouvée : " + jour_non_travaille);
-                            } else {
+                            try {
+                                String date = InputString();
+                                Jour_non_travaille jour_non_travaille = jour_non_travailleDAO.FindById(0, date);
+                                if (jour_non_travaille != null) {
+                                    System.out.println("Relation enseignement trouvée : " + jour_non_travaille);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec la date " + date);
+                                    System.out.println("Aucune relation enseignement trouvée avec la date " + date);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer une date valide");
                             }
                         } else if (choice == 12) {
-                            int id = InputInt();
-                            Matiere matiere = matiereDAO.FindById(id, null);
-                            if (matiere != null) {
-                                System.out.println("Relation enseignement trouvée : " + matiere);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Matiere matiere = matiereDAO.FindById(id, null);
+                                if (matiere != null) {
+                                    System.out.println("Relation enseignement trouvée : " + matiere);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
                         } else if (choice == 13) {
-                            int id = InputInt();
-                            Salle salle = salleDAO.FindById(id, null);
-                            if (salle != null) {
-                                System.out.println("Relation enseignement trouvée : " + salle);
-                            } else {
+                            try {
+                                int id = InputInt();
+                                Salle salle = salleDAO.FindById(id, null);
+                                if (salle != null) {
+                                    System.out.println("Relation enseignement trouvée : " + salle);
+                                } else {
 
-                                System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                    System.out.println("Aucune relation enseignement trouvée avec l'ID " + id);
+                                }
+                            } catch (Exception e) {
+                                System.out.println("Veuillez rentrer un ID correct");
                             }
+
                         }
                     }
 
