@@ -19,13 +19,12 @@ public class ConnexionBD {
 
         // 2eme Etape : Trouver l'URL de notre base de donnee
 
-        String urlBD = "jdbc:mysql://localhost:3306/mabase";
+        String urlBD = "jdbc:mysql://localhost:3306/sae";
 
         // 3eme Etape : charger en mémoire le Driver
 
         try{
             Class.forName(nomDuDriverJDBCduSGBD);
-            System.out.println("Chargement du Driver réussi");
         }
         catch (ClassNotFoundException e){
             e.printStackTrace();
@@ -36,11 +35,11 @@ public class ConnexionBD {
 
         try {
             maConnexion = DriverManager.getConnection(urlBD, "root", "");
-            System.out.println("Connection à la base réussi");
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(-1);
         }
+
 
         return maConnexion;
     }
