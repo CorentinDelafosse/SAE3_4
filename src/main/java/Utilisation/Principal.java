@@ -96,6 +96,10 @@ public class Principal {
                 }catch(Exception e){
                     System.out.println("La valeur entrée n'est pas valide.");
                 }
+                if (choice == 0){
+                    System.out.println("Veuiller redémarer le programme , une erreur est survenu . ");
+                    break;
+                }
                     if (choice == 14) {
                         System.out.print("Au revoir");
                         break;
